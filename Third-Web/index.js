@@ -244,6 +244,28 @@ console.log(x.valueOf());
 
 
 //Js Classes refrence
-
-
+//static keyword use  case
+class temp_class{
+    constructor(name, Sirname, useremail ){
+        this.name = name;
+this.Sirname = Sirname;
+this.useremail = useremail; 
+    }
+static test(a, b){
+return a + b;
+}
+}
+let x  = new temp_class("riki", "Dhiman", "sd3878@gmail.com");
+console.log(JSON.stringify(x));
+let z = temp_class.test(100, 365);
+console.log(z);
+//extends keyword and auper keyword
+class test_now extends temp_class{
+constructor(name, age){
+    super(name);
+    this.age = age;
+    }
+    }
+    let a = new test_now("riki", 12);
+    console.log(JSON.stringify(a));
 
