@@ -268,4 +268,141 @@ constructor(name, age){
     }
     let a = new test_now("riki", 12);
     console.log(JSON.stringify(a));
+//Date methods
+//new date() method display date accroding to your region
+new Date();
+//new Date(milliseconds) display date accroding to your miliseconds
+let x = new Date(1000000);
+console.log(x);
+//new Date(dateString) display  date accroding to your string numeric
+let x = new Date("2015-03-25");
+console.log(x);
+//new Date(year, month, day, hours, minutes, seconds, milliseconds)  display  date accroding to your set year, month, day, hours, minutes, seconds, milliseconds
+let x =  new Date(2018, 11, 24, 10, 33, 30, 0);
+console.log(x);
+//day method
+//Date.getDay()
+new Date();
+//Hours method
+Date.getHours()
+//milisenconds method
+const d = new Date();
+let ms = d.getMilliseconds();
+console.log(ms);
+//parse method
+let ms = Date.parse("March 21, 2012");
+console.log(ms);
+//prototype method allow you to add new method for Date function
+Date.prototype.myMonth = function()
+{
+if (this.getMonth()==0) {return "January"};
+if (this.getMonth()==1) {return "February"};
+if (this.getMonth()==2) {return "March"};
+if (this.getMonth()==3) {return "April"};
+if (this.getMonth()==4) {return "May"};
+if (this.getMonth()==5) {return "June"};
+if (this.getMonth()==6) {return "July"};
+if (this.getMonth()==7) {return "August"};
+if (this.getMonth()==8) {return "September"};
+if (this.getMonth()==9) {return "October"};
+if (this.getMonth()==10) {return "November"};
+if (this.getMonth()==11) {return "December"};
+}
+const d = new Date();
+let month = d.myMonth();
+console.log(month);
+//setDate method 
+const d = new Date();
+console.log(d.setDate(15));
+//toDateString method return date in string 
+//The toDateString() method returns the date (not the time) of a date object as a string.
+const d = new Date();
+let text = d.toDateString();
+console.log(text);
+//toISOString method 
+//The toISOString() method returns a date object as a string, using the ISO standard.
+//format is: YYYY-MM-DDTHH:mm:ss.sssZ
+const d = new Date();
+let text = d.toISOString();
+console.log(text);
+//toJSON method
+//The toJSON() method returns a date object as a string, formatted as a JSON date.
+const d = new Date();
+let text = d.toJSON();
+console.log(text);
+//toLocaleDateString() method
+  //The toLocaleDateString() method returns the date (not the time) of a date object as a string, using locale conventions.
+const d = new Date();
+let text = d.toLocaleDateString();
+console.log(text);
+//toLocaleString method 
+//returns 1/12/2022, 2:38:49 PM format
+const d = new Date();
+let text = d.toLocaleString();
+console.log(text);
+//toString method
+//returns Wed Jan 12 2022 14:40:08 GMT+0530 (India Standard Time) format
+const d = new Date();
+let text = d.toString();
+console.log(text);
 
+// Note
+// Every JavaScript object has a toString() method.
+
+// The toString() method is used internally by JavaScript when an object needs to be displayed as a text (like in HTML), or when an object needs to be used as a string.
+
+// Normally, you will not use it in your own code.
+
+//toTimeString method
+//returns This format    14:42:06 GMT+0530 (India Standard Time)
+const d = new Date();
+let text = d.toTimeString();
+console.log(text);
+//toUTCString method
+//returns this format   Wed, 12 Jan 2022 09:13:
+const d = new Date();
+let text = d.toUTCString();
+console.log(text);
+//UTC method
+//returns   time in miliseconds or The valueOf() method returns the primitive value of a date object.
+let ms = Date.UTC(2020, 02, 30);
+console.log(ms);
+
+//js Errors 
+//display an errors 
+try{
+  asdfdsk('gfgfd');
+  }
+  catch(err){
+   err;
+  }
+  //this returns ReferenceError: asdfdsk is not defined
+  //example 2
+  try{
+    asdfdsk('gfgfd');
+    }
+    catch(err){
+     err.name + err.message;
+    }
+    //returns '1)ReferenceError  2)asdfdsk is not defined'
+
+//JS global refrence /global methods and properties
+//encodeURI
+//decodeURI
+let url_1 = "my test.asp?name=ståle&car=saab";
+let encode = encodeURI(url_1);
+let decode = decodeURI(encode);
+console.log(encode);
+console.log(decode);
+//returns my%20test.asp?name=st%C3%A5le&car=saab
+//returns  my test.asp?name=ståle&car=saab
+
+//encodeURIComponent
+//decodeURIComponent
+let url_1 = "my test.asp?name=ståle&car=saab";
+let encode = encodeURIComponent(url_1);
+let decode = decodeURIComponent(encode);
+console.log(encode);
+console.log(decode);
+//returns my%20test.asp%3Fname%3Dst%C3%A5le%26car%3Dsaab
+//returns  my test.asp?name=ståle&car=saab

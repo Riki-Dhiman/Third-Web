@@ -185,3 +185,15 @@ console.log(a.slice(0, 3));
 const a = [200, 150, 100, 50, 25];
 console.log(a.slice(-4, -1));
 
+//Arrow functions
+//example 1 multi arrgument
+let a = (a, b) => a +b;
+console.log(a(12,13));
+//example 2 single arrgument
+let x = a => a + 100;
+console.log(x(10));
+//
+e = (a,b) => {
+  return a/b;
+  }
+  console.log(e(20, 10));
